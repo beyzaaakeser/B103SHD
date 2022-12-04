@@ -1,0 +1,38 @@
+package day25exception;
+
+public class E02 {
+
+
+    public static void main(String[] args) {
+        String arr[] = {"Ali", "Can", "Veli", "Han"};
+
+        getElementFromArray(arr,2); // Veli
+        getElementFromArray(arr,0); // Ali
+        getElementFromArray(arr,4); // Exception ==> ArrayIndexOutOfBoundsException : Index 4 out of bounds for length 4
+
+    } // main
+
+    // Bir String Array'den index girerek eleman elde edebilmek icin bir method olusturun
+    public static void getElementFromArray(String arr[],int idx){
+
+        try{
+            System.out.println(arr[idx]);
+        }catch (ArrayIndexOutOfBoundsException e){
+            // bu kisim benim teknik olmayan aciklamam
+            System.out.println("Array indexte bir problem meydana geldi ==> "+e.getMessage());
+
+            // Exception ile ilgili detaylica teknik mesaj verir.
+            e.printStackTrace();
+
+            // Hata mesajini diger mesajlardan ayirmak icin kullanilir.
+            System.err.println("Array indexte bir problem yasandi");
+        }
+
+
+
+    } // 1.method
+
+
+
+
+} // class
